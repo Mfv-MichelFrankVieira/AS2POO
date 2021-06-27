@@ -1,6 +1,6 @@
 # Café da Esquina
 
-Programa que mostras alguns detalhes das solicitações realizadas durante o Espediente da Cafeteria.
+Programa que mostra alguns detalhes das solicitações realizadas durante o EXpediente da estabelecimento.
 
 ## Alunos
 
