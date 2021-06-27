@@ -26,21 +26,22 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 
 	public ComernoLocal leComernoLocal (){
 
-		String [] valores = new String [5];
+		String [] valores = new String [6];
 		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados"};
 		valores = leValores (nomeVal);
 
 		int qtdeBebidas = this.retornaInteiro(valores[1]);
 		int qtdeSalgados = this.retornaInteiro(valores[2]);
-
-		ComernoLocal comernoLocal = new ComernoLocal (valores[0],qtdeBebidas,qtdeSalgados, null);
+		String sobremesaComDesconto = this.toString();
+		
+		ComernoLocal comernoLocal = new ComernoLocal (valores[0],qtdeBebidas,qtdeSalgados, null,sobremesaComDesconto);
 		return comernoLocal;
 	}
 
 	public ParaaViagem leParaaViagem (){
 
 		String [] valores = new String [6];
-		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados", "Embalara para viagem?"};
+		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados"};
 		valores = leValores (nomeVal);
 
 		int qtdeBebidas = this.retornaInteiro(valores[1]);
@@ -49,6 +50,19 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 		
 		ParaaViagem paraaViagem = new ParaaViagem (valores[0],qtdeBebidas,qtdeSalgados, null,embalagem);
 		return paraaViagem;
+	}
+	public SolIfood leSolIfood (){
+
+		String [] valores = new String [6];
+		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados"};
+		valores = leValores (nomeVal);
+
+		int qtdeBebidas = this.retornaInteiro(valores[1]);
+		int qtdeSalgados = this.retornaInteiro(valores[2]);
+		String taxaEntrega = this.toString();
+		
+		SolIfood SolIfood = new SolIfood (valores[0],qtdeBebidas,qtdeSalgados, null, taxaEntrega);
+		return SolIfood;
 	}
 
 	private boolean intValido(String s) {
@@ -171,7 +185,8 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 				menu = "Solicitação do Cliente\n" +
 						"Opções:\n" + 
 						"1. Consumo no Local.\n" +
-						"2. Solicitação para Viagem.\n";
+						"2. Solicitação para Viagem.\n"+
+						"3. Solicitação para Ifood.\n";
 
 				entrada = JOptionPane.showInputDialog (menu + "\n\n");
 				opc2 = this.retornaInteiro(entrada);
@@ -181,10 +196,13 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 				break;
 				case 2: solicitacao.add((Pedidos)leParaaViagem());
 				break;
+				case 3: solicitacao.add((Pedidos)leSolIfood());
+				break;
 				default: 
 					JOptionPane.showMessageDialog(null,"Escolha o tipo da Solicitação:\n"
 							+ "(1) Consumo no Local.\n"
-							+ "(2) Solicitação para Viagem.");
+							+ "(2) Solicitação para Viagem."+
+							"3. Solicitação para Ifood.\n");
 				}
 
 				break;

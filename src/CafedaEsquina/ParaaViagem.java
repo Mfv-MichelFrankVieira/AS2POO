@@ -9,12 +9,12 @@ public class ParaaViagem extends Pedidos implements Serializable{
 	
 	public ParaaViagem(String nomeCliente, int qtdeBebidas, int qtdeSalgados, String gorjeta, String embalagem) {
 		super(nomeCliente, qtdeBebidas, qtdeSalgados);
-		this.tipodoPedido = "Para a viagem";
-		this.embalagem = "SIM";
+		this.tipodoPedido = "Para a viagem.";
+		this.embalagem = "SIM.";
 	}
 	
 	public String gorjeta() {
-		return "Sem taxas adicionais";
+		return "Sem taxas adicionais!";
 	}
 
 	public String getEmbalagem() {
@@ -26,7 +26,7 @@ public class ParaaViagem extends Pedidos implements Serializable{
 	}
 	public String toString() {
 		String retorno = super.toString();
-		retorno += "Embalar itens para viagem? " + this.embalagem + "\n";
+		retorno += "Embalar itens para viagem ? " + this.embalagem + "\n";
 		return retorno;
 	}
 	

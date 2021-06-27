@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="CafedaEsquina.Pedidos" project="Setima semana" 
     file="/Setima semana/src/CafedaEsquina/Pedidos.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="387" y="300"/>    
+    <position height="-1" width="-1" x="443" y="299"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -61,10 +61,10 @@
   <association id="9">    
     <end type="SOURCE" refId="2" navigable="false">      
       <attribute id="10" name="solicitacao">        
-        <position height="0" width="0" x="187" y="-258"/>      
+        <position height="0" width="0" x="243" y="-259"/>      
       </attribute>      
       <multiplicity id="11" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="187" y="-258"/>      
+        <position height="0" width="0" x="243" y="-259"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    

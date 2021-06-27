@@ -18,7 +18,7 @@ public abstract class Pedidos implements Serializable {
 	public String toString() {
 		String retorno = "";
 		retorno += "Nome do cliente: "     + this.nomeCliente     + "\n";
-		retorno += "Quantidade de bebida: "    + this.qtdeBebidas    + " anos\n";
+		retorno += "Quantidade de bebida: "    + this.qtdeBebidas    + " \n";
 		retorno += "Quantidade de salgados: "     + this.qtdeSalgados     + "\n";
 		retorno += "Tipo do pedido: "  + this.tipodoPedido  + "\n";
 		retorno += "Taxas adicionais "  + gorjeta()  + "\n";
