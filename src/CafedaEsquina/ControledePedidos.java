@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
-public class PedidosdoCafe {private ArrayList<Pedidos> solicitacao = new ArrayList<Pedidos>();
+public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new ArrayList<Pedidos>();
 
-	public PedidosdoCafe() {this.solicitacao = new ArrayList<Pedidos>();
+	public ControledePedidos() {this.solicitacao = new ArrayList<Pedidos>();
 	}
 	public String[] leValores (String [] dadosIn){
 		String [] dadosOut = new String [dadosIn.length];
@@ -233,7 +233,7 @@ public class PedidosdoCafe {private ArrayList<Pedidos> solicitacao = new ArrayLi
 
 	public static void main (String [] args){
 
-		PedidosdoCafe pedido = new PedidosdoCafe ();
+		ControledePedidos pedido = new ControledePedidos ();
 		pedido.menuCafeteria();
 
 	}
