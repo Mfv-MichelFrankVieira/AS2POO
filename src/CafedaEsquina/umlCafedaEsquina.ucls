@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="CafedaEsquina.ComernoLocal" project="Setima semana" 
     file="/Setima semana/src/CafedaEsquina/ComernoLocal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="689" y="475"/>    
+    <position height="-1" width="-1" x="691" y="507"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
