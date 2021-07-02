@@ -7,9 +7,11 @@ Programa que mostra detalhes basicos das solicitações realizadas durante o Exp
 ## Alunos
 
 ALINE SCISLESKI.
+
 LEONARDO HENRIQUE MIRANDA.
+
 MICHEL FRANK VIEIRA.
 
 ## Versions 
 
-v1.0.27062021 - Primeira Versão e Ultima.
+v1.0.01072021 - Versão de Entrega.
