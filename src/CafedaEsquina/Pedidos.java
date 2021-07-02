@@ -17,14 +17,15 @@ public abstract class Pedidos implements Serializable {
 	}
 	public String toString() {
 		String retorno = "";
+		retorno += "Tipo do pedido: "  + this.tipodoPedido  + "\n";
 		retorno += "Nome do cliente: "     + this.nomeCliente     + "\n";
 		retorno += "Quantidade de bebida: "    + this.qtdeBebidas    + " \n";
 		retorno += "Quantidade de salgados: "     + this.qtdeSalgados     + "\n";
-		retorno += "Tipo do pedido: "  + this.tipodoPedido  + "\n";
-		retorno += "Taxas adicionais "  + gorjeta()  + "\n";
+		retorno += "Taxas adicionais: "  + gorjeta()  + "\n";
 		return retorno;
 	}
 	public abstract String gorjeta();
+
 	
 	public String getNomeCliente() {
 		return nomeCliente;

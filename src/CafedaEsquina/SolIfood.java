@@ -5,16 +5,17 @@ import java.io.Serializable;
 public class SolIfood extends Pedidos implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+
 	private String taxaEntrega;
+	public String gorjeta() {
+		return "SIM";
+	}
 	
 	public SolIfood(String nomeCliente, int qtdeBebidas, int qtdeSalgados, String gorjeta, String taxaEntrega) {
 		super(nomeCliente, qtdeBebidas, qtdeSalgados);
 		this.tipodoPedido = "IFood";
 		this.taxaEntrega = "5% do valor do pedido.";
 		}
-	public String gorjeta() {
-		return "SIM";
-	}
 	public String getTaxaEntrega() {
 		return taxaEntrega;
 	}

@@ -26,35 +26,35 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 
 	public ComernoLocal leComernoLocal (){
 
-		String [] valores = new String [6];
-		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados"};
+		String [] valores = new String [3];
+		String [] nomeVal = {"Nome do cliente", "Quantidade de Bebidas", "Quantidade de Salgados"};
 		valores = leValores (nomeVal);
 
 		int qtdeBebidas = this.retornaInteiro(valores[1]);
 		int qtdeSalgados = this.retornaInteiro(valores[2]);
-		String sobremesaComDesconto = this.toString();
+		String sobremesaComDesconto = toString();
 		
-		ComernoLocal comernoLocal = new ComernoLocal (valores[0],qtdeBebidas,qtdeSalgados, null,sobremesaComDesconto);
+		ComernoLocal comernoLocal = new ComernoLocal (valores[0],qtdeBebidas,qtdeSalgados,null, sobremesaComDesconto);
 		return comernoLocal;
 	}
 
 	public ParaaViagem leParaaViagem (){
 
-		String [] valores = new String [6];
-		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados"};
+		String [] valores = new String [3];
+		String [] nomeVal = {"Nome do cliente", "Quantidade de Bebidas", "Quantidade de Salgados"};
 		valores = leValores (nomeVal);
 
 		int qtdeBebidas = this.retornaInteiro(valores[1]);
 		int qtdeSalgados = this.retornaInteiro(valores[2]);
 		String embalagem = this.toString();
 		
-		ParaaViagem paraaViagem = new ParaaViagem (valores[0],qtdeBebidas,qtdeSalgados, null,embalagem);
+		ParaaViagem paraaViagem = new ParaaViagem (valores[0],qtdeBebidas,qtdeSalgados, null, embalagem);
 		return paraaViagem;
 	}
 	public SolIfood leSolIfood (){
 
 		String [] valores = new String [6];
-		String [] nomeVal = {"Nome do cliente", "Qt de Bebidas", "Qt de Salgados"};
+		String [] nomeVal = {"Nome do cliente", "Quantidade de Bebidas", "Quantidade de Salgados"};
 		valores = leValores (nomeVal);
 
 		int qtdeBebidas = this.retornaInteiro(valores[1]);
@@ -106,7 +106,7 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 		ObjectOutputStream outputStream = null;
 		try {
 			outputStream = new ObjectOutputStream 
-					(new FileOutputStream("c:\\temp\\PedidosdoCafe.dados"));
+					(new FileOutputStream("C:\\AAAA\\PedidosdoCafe.dados"));
 			for (int i=0; i < solicitacao.size(); i++)
 				outputStream.writeObject(solicitacao.get(i));
 		} catch (FileNotFoundException ex) {
@@ -171,6 +171,7 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 		do {
 			menu = "Controle Cafeteria\n" +
 					"Opções:\n" + 
+					"\n"+
 					"1. Fazer Pedido\n" +
 					"2. Exibir Pedido\n" +
 					"3. Gravar Pedido\n" +
@@ -183,7 +184,8 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 			switch (opc1) {
 			case 1:// Entrar dados
 				menu = "Solicitação do Cliente\n" +
-						"Opções:\n" + 
+						"Opções:\n" +
+						"\n"+
 						"1. Consumo no Local.\n" +
 						"2. Solicitação para Viagem.\n"+
 						"3. Solicitação para Ifood.\n";
@@ -200,21 +202,24 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 				break;
 				default: 
 					JOptionPane.showMessageDialog(null,"Escolha o tipo da Solicitação:\n"
+							+ "\n"
 							+ "(1) Consumo no Local.\n"
-							+ "(2) Solicitação para Viagem."+
-							"3. Solicitação para Ifood.\n");
+							+ "(2) Solicitação para Viagem."
+							+ "3. Solicitação para Ifood.\n");
 				}
 
 				break;
-			case 2: // Exibir dados
+			case 2: // Exibir dados/
 				if (solicitacao.size() == 0) {
 					JOptionPane.showMessageDialog(null,"Não existe pedido!");
 					break;
 				}
-				String dados = "";
+				String dados = "Resumo do pedido." + "\n"
+						+ "\n";
 				for (int i=0; i < solicitacao.size(); i++)	{
-					dados += solicitacao.get(i).toString() + "---------------\n";
-				}
+					dados += solicitacao.get(i).toString() + "---------------------"
+							+ "-------------------------------------------------------\n";
+				} 
 				JOptionPane.showMessageDialog(null,dados);
 				break;
 			case 3:// Grava Dados
@@ -223,15 +228,15 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 					break;
 				}
 				salvaSolicitacao(solicitacao);
-				JOptionPane.showMessageDialog(null,"Dados SALVOS com sucesso!");
+				JOptionPane.showMessageDialog(null,"Pedido SALVO com sucesso!");
 				break; 
 			case 4: // Limpar Dados
 				if (solicitacao.size() == 0) {
-					JOptionPane.showMessageDialog(null,"Não existe pedido!");
+					JOptionPane.showMessageDialog(null,"Não existe pedido para exibição!");
 					break;
 				}
 				solicitacao.clear();
-				JOptionPane.showMessageDialog(null,"Dados LIMPOS com sucesso!");
+				JOptionPane.showMessageDialog(null,"Solicitação APAGADO com sucesso!");
 				break;
 			case 5: // Recupera Dados
 				solicitacao = recuperaSolicitacao();
@@ -239,7 +244,7 @@ public class ControledePedidos {private ArrayList<Pedidos> solicitacao = new Arr
 					JOptionPane.showMessageDialog(null,"Sem dados para Recupera.");
 					break;
 				}
-				JOptionPane.showMessageDialog(null,"Dados RECUPERADOS com sucesso!");
+				JOptionPane.showMessageDialog(null,"Pedido RECUPERADOS com sucesso!");
 				break;
 			case 0:
 				JOptionPane.showMessageDialog(null,"Fim do expediente");
